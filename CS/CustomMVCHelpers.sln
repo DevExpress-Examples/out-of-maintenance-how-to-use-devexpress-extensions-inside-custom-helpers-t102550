@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMVCHelpers", "CustomMVCHelpers\CustomMVCHelpers.csproj", "{1FAB6327-BB6B-416F-82D4-D16A8B8726FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FAB6327-BB6B-416F-82D4-D16A8B8726FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAB6327-BB6B-416F-82D4-D16A8B8726FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAB6327-BB6B-416F-82D4-D16A8B8726FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAB6327-BB6B-416F-82D4-D16A8B8726FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
