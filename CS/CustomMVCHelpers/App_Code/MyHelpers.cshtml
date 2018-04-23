@@ -1,0 +1,49 @@
+@using DevExpress.Web.Mvc
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using DevExpress.Web.Mvc.UI
+
+@helper LayoutHelper(DevExpress.Web.ASPxGridView.GridViewDataItemTemplateContainer container)
+{             
+    <table class="templateTable">
+        <tr>
+
+            <td>@{
+                var outputStringBuilder = new System.Text.StringBuilder();
+                LabelSettings ls = new LabelSettings();
+                ls.Name = "Label" + container.VisibleIndex;
+                bool value = (bool)DataBinder.Eval(container.DataItem, "ModelState");
+                ls.Text = value.ToString();
+
+                using (var writer = new StringWriter(outputStringBuilder))
+                {
+                    var viewContext = new ViewContext { Writer = writer };
+                    var Extension = new LabelExtension(ls, viewContext);
+
+                    Extension.Render();
+                @(new MvcHtmlString(outputStringBuilder.ToString()))
+                }  
+                      
+            }</td>
+            <td>
+                @{                     
+                    outputStringBuilder = new System.Text.StringBuilder();
+                    ImageEditSettings im = new ImageEditSettings();
+
+                    im.Name = "im" + container.VisibleIndex;
+                    im.Properties.EmptyImage.IconID = value == true ? "actions_apply_16x16" : "actions_cancel_16x16";
+                    im.Properties.ImageAlign = System.Web.UI.WebControls.ImageAlign.Bottom;
+
+                    using (var writer = new StringWriter(outputStringBuilder))
+                    {
+                        var viewContext = new ViewContext { Writer = writer };
+                        var imageExtension = new ImageEditExtension(im, viewContext);
+
+                        imageExtension.Render();
+                    @(new MvcHtmlString(outputStringBuilder.ToString()))
+                    }
+                }
+            </td>
+        </tr>
+    </table> 
+}
