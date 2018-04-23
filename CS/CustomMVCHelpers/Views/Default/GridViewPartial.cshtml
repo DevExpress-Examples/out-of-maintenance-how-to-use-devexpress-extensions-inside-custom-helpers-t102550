@@ -1,0 +1,22 @@
+@{
+    ViewBag.Title = "GridViewPartial";
+}
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "grid";
+    settings.CallbackRouteValues = new { Action = "GridViewPartial", Controller = "Default" };
+    settings.Columns.Add("ModelID");
+    settings.Columns.Add("ModelName");
+    settings.Columns.Add(col => {
+        col.FieldName = "ModelDate";
+        col.ColumnType = MVCxGridViewColumnType.DateEdit;
+    });
+    settings.Columns.Add(column=>{
+        column.FieldName = "ModelState";
+        column.ColumnType = MVCxGridViewColumnType.CheckBox;
+        column.SetDataItemTemplateContent(content => {
+            ViewContext.Writer.Write(MyHelpers.LayoutHelper(content).ToHtmlString());        
+        });
+    
+    });    
+    
+}).Bind(Model).GetHtml()
