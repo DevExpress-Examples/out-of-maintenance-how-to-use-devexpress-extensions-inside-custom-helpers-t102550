@@ -12,7 +12,7 @@
 <!-- default file list end -->
 # How to use DevExpress extensions inside custom helpers
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t102550)**
+**[[Run Online]](https://codecentral.devexpress.com/t102550/)**
 <!-- run online end -->
 
 
